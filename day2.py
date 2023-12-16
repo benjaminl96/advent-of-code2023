@@ -14,6 +14,7 @@ limits = {
           2: 14
       }
 
+power = 0
 
 for line in input:
    gameNum = int(line.split(':')[0].split(' ')[1])
@@ -44,6 +45,7 @@ for line in input:
    games[gameNum-1][0] = maxRed
    games[gameNum-1][1] = maxGreen
    games[gameNum-1][2] = maxBlue
+   power += (maxRed * maxGreen * maxBlue)
 
 validSum = 0
 
@@ -55,6 +57,6 @@ for i in range(100):
   if valid:
     validSum += i+1
 
-print(validSum)
+print(validSum, power)
 
 
